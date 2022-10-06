@@ -1,0 +1,2 @@
+Read in the file specified on the command line
+Do a simple split in file on whitespace to obtain all Do Read in specified simple obtain split line coomand line a simple
