@@ -1,30 +1,46 @@
 def verbing(s):
-    n=len(s)
-    if(n<3):
+    n = len(s)
+    # If the length of string is less than 3 return the same string
+    if(n < 3):
         return s
-    elif(s[-1]=='g' and s[-2]=='n' and s[-3]=='i'):
-        return(s+"ly")
+    # If the string is end with 'ing' add 'ly' to the string and return it
+    elif(s[-1] == 'g' and s[-2] == 'n' and s[-3] == 'i'):
+        return(s + "ly")
+    # If the string is grater than 3 and not end with 'ing' add 'ing' to the string and return it
     else:
-        return(s+"ing")
+        return(s + "ing")
+
+
+
 def not_bad(s):
-    posnot=s.find('not')
-    posbad=s.find('bad')
-    if(posbad>posnot):
-        s=s[:(posnot)]+"good"+s[(posbad+3):]
+    posnot = s.find('not')          # Store the position of first occurence of not 
+    posbad = s.find('bad')          # Store the position of first occurence of bad
+    if(posbad > posnot):
+        s = s[ : (posnot)] + "good" + s[(posbad + 3): ]     # Change not to bad sub string to good
     return s
+
+
+
 def front_back(a, b):
-    n=len(a)
-    m=len(b)
-    n1=int((n+1)/2)
-    m1=int((m+1)/2)
-    res=a[:n1]+b[:m1]+a[n1:]+b[m1:]
+    n = len(a)
+    m = len(b)
+    n1 = int((n + 1) / 2)
+    m1 = int((m + 1) / 2)
+    # Concat a's first half, b's first half, a's second half and b's second half and store it to res
+    res = a[ : n1] + b[ :m1] + a[n1: ]+ b[m1: ]
     return res
+
+
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '
     else:
         prefix = '  X '
     print('%s got: %s expected: %s' % (prefix, repr(got), repr(expected)))
+
+
+    
 def main():
     print('verbing')
     test(verbing('hail'), 'hailing')
