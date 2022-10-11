@@ -1,7 +1,8 @@
 def remove_adjacent(nums):
     nums2 = []
+    # Here the element on the list num will assigned to nums2 one by one
     for i in nums:
-        if(i not in nums2):
+        if(i not in nums2):     # Check the element already in the list
             nums2.append(i)
     return nums2
 
@@ -13,18 +14,18 @@ def linear_merge(list1, list2):
     l1, l2 = 0, 0
     list3 = []
     while(l1 < n1 or l2 < n2):
-        if(l1 == n1):
-            list3.append(list2[l2])
+        if(l1 == n1):                   # It will work if the all elements of the list1 is assigned to list3   
+            list3.append(list2[l2])     
             l2 += 1
             continue 
-        if(l2 == n2):
+        if(l2 == n2):                   # It will work if the all elements of the list2 is assigned to list3 
             list3.append(list1[l1])
             l1 += 1 
             continue
-        if(list1[l1] < list2[l2]):
+        if(list1[l1] < list2[l2]):      # It will work if the elements of the list2 is grtater than list1
             list3.append(list1[l1])
             l1 += 1
-        else:
+        else:                           # It will work if the elements of the list1 is grtater than list2
             list3.append(list2[l2])
             l2 += 1
     return list3
